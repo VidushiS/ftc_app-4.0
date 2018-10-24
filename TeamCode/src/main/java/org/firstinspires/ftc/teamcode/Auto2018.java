@@ -27,9 +27,20 @@ public class Auto2018 extends LinearOpMode{
 
         hardware.EncooderReseeter(this);
 
-        hardware.GoStraight(3200, 0.5);
+        hardware.GoStraight(3200, 1.0);
 
         //Deploy the color servo. Below is the following mock code required for it to work.
+        /*
+        * while(ColorSensor1 = silver && ColorSensor2 = silver){
+        *   robot should raise one arm and turn so that the middle is knocked off
+        *   idle();
+        *}
+        *while(ColorSensor1 = Gold){
+        * robot should turn in that direction to knock it off, opposite if other colorsensor reads gold
+        *}
+        * */
+
+        hardware.GoStraight(1000, 1.0);
 
 
 
