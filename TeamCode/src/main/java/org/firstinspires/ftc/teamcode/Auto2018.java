@@ -27,7 +27,19 @@ public class Auto2018 extends LinearOpMode{
 
         hardware.EncooderReseeter(this);
 
+        hardware.LeftSlideMotor.setPower(-.5);
+        hardware.RightSlideMotor.setPower(-.5);
+
+        sleep(2000);
+
+        hardware.LeftSlideMotor.setPower(0);
+        hardware.RightSlideMotor.setPower(0);
+
+        
+
         hardware.GoStraight(3200, 1.0);
+        hardware.waitBlock(this);
+        hardware.MotorStop(this);
 
         //Deploy the color servo. Below is the following mock code required for it to work.
         /*
@@ -41,6 +53,9 @@ public class Auto2018 extends LinearOpMode{
         * */
 
         hardware.GoStraight(1000, 1.0);
+        hardware.waitBlock(this);
+        hardware.MotorStop(this);
+
 
 
 

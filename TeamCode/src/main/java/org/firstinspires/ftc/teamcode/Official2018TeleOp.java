@@ -36,6 +36,7 @@ public class Official2018TeleOp extends LinearOpMode{
             }
             else if(gamepad1.left_trigger > 0 && gamepad1.right_trigger == 0 ){
                 init.strafeMotor.setPower(-strafeY);
+                idle();
             }
             else init.strafeMotor.setPower(0);
             idle();
@@ -45,14 +46,34 @@ public class Official2018TeleOp extends LinearOpMode{
 
             if(gamepad.x2(gamepad2.x) == 3){
                 init.LeftSlideMotor.setPower(.5);
+                init.RightSlideMotor.setPower(.5);
                 idle();
             }
             else if(gamepad.x2(gamepad2.x) == 2){
-                init.LeftSlideMotor.setPower(.5);
+                init.LeftSlideMotor.setPower(-.5);
+                init.RightSlideMotor.setPower(-.5);
                 idle();
             }
             else if(gamepad.x2(gamepad2.x) == 1){
                 init.LeftSlideMotor.setPower(0);
+                init.RightSlideMotor.setPower(0);
+                idle();
+            }
+
+            if(gamepad.b(gamepad2.b)){
+                init.IntakeMotor.setPower(.5);
+                idle();
+            }
+            else if(!gamepad.b(gamepad2.b)){
+                init.IntakeMotor.setPower(.0);
+                idle();
+            }
+            if(gamepad.a(gamepad2.a)){
+                init.IntakeMotor.setPower(-.5);
+                idle();
+            }
+            else if(!gamepad.a(gamepad2.a)){
+                init.IntakeMotor.setPower(0);
                 idle();
             }
 

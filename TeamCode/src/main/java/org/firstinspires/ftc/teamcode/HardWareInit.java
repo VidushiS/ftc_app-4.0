@@ -5,7 +5,7 @@ import com.qualcomm.robotcore.hardware.DcMotorSimple;
 import com.qualcomm.robotcore.hardware.Servo;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 
-import org.firstinspires.ftc.robotcore.external.Telemetry;
+
 
 /**
  * Created by singh on 10/9/2018.
@@ -22,13 +22,13 @@ public class HardWareInit{
         strafeMotor = op.hardwareMap.dcMotor.get("strafeMotor");
         IntakeMotor = op.hardwareMap.dcMotor.get("IntakeMotor");
         rightMotor.setDirection(DcMotorSimple.Direction.REVERSE);
-      /*  LeftSlideMotor = op.hardwareMap.dcMotor.get("LeftSlideMotor");
+        LeftSlideMotor = op.hardwareMap.dcMotor.get("LeftSlideMotor");
         RightSlideMotor = op.hardwareMap.dcMotor.get("RightSlideMotor");
-
-        FlipMotor = op.hardwareMap.dcMotor.get("FlipMotor");
-
-
         RightSlideMotor.setDirection(DcMotorSimple.Direction.REVERSE);
+        /*FlipMotor = op.hardwareMap.dcMotor.get("FlipMotor");
+
+
+
 
         ColorSensor1 = op.hardwareMap.servo.get("ColorSensor1");
         ColorSensor2 = op.hardwareMap.servo.get("ColorSensor2");
