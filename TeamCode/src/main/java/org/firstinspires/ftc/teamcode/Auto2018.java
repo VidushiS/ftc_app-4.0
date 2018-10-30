@@ -2,6 +2,7 @@ package org.firstinspires.ftc.teamcode;
 
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
+import com.qualcomm.robotcore.hardware.DcMotor;
 
 
 @Autonomous(name = "Official Auto", group = "Exercises")
@@ -18,7 +19,8 @@ public class Auto2018 extends LinearOpMode{
     public void runOpMode(){
         hardware.initHardware(this);
 
-        hardware.EncooderReseeter(this);
+        hardware.leftMotor.setMode(DcMotor.RunMode.RUN_TO_POSITION);
+        hardware.rightMotor.setMode(DcMotor.RunMode.RUN_TO_POSITION);
 
         telemetry.addData("Mode", "waiting");
         telemetry.update();
@@ -27,19 +29,20 @@ public class Auto2018 extends LinearOpMode{
 
         hardware.EncooderReseeter(this);
 
-        hardware.LeftSlideMotor.setPower(-.5);
+       /* hardware.LeftSlideMotor.setPower(-.5);
         hardware.RightSlideMotor.setPower(-.5);
 
         sleep(2000);
 
         hardware.LeftSlideMotor.setPower(0);
-        hardware.RightSlideMotor.setPower(0);
+        hardware.RightSlideMotor.setPower(0);*/
 
-        
 
-        hardware.GoStraight(3200, 1.0);
+
+        hardware.GoStraight(1000, 1.0);
         hardware.waitBlock(this);
         hardware.MotorStop(this);
+        hardware.EncooderReseeter(this);
 
         //Deploy the color servo. Below is the following mock code required for it to work.
         /*
@@ -52,10 +55,16 @@ public class Auto2018 extends LinearOpMode{
         *}
         * */
 
+       /* hardware.Turn(400, .5);
+        hardware.waitBlock(this);
+        hardware.MotorStop(this);
+        hardware.EncooderReseeter(this);
+
+
         hardware.GoStraight(1000, 1.0);
         hardware.waitBlock(this);
         hardware.MotorStop(this);
-
+        hardware.EncooderReseeter(this);*/
 
 
 

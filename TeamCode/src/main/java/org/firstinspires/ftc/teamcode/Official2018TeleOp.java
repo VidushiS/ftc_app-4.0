@@ -44,7 +44,7 @@ public class Official2018TeleOp extends LinearOpMode{
             init.leftMotor.setPower(leftY);
             init.rightMotor.setPower(rightY);
 
-            if(gamepad.x2(gamepad2.x) == 3){
+            /*if(gamepad.x2(gamepad2.x) == 3){
                 init.LeftSlideMotor.setPower(.5);
                 init.RightSlideMotor.setPower(.5);
                 idle();
@@ -58,8 +58,24 @@ public class Official2018TeleOp extends LinearOpMode{
                 init.LeftSlideMotor.setPower(0);
                 init.RightSlideMotor.setPower(0);
                 idle();
-            }
+            }*/
 
+            if(gamepad1.dpad_down){
+                init.LeftSlideMotor.setPower(-.5);
+                init.RightSlideMotor.setPower(-.5);
+                idle();
+            }
+            else if(gamepad1.dpad_up){
+                init.LeftSlideMotor.setPower(.5);
+                init.RightSlideMotor.setPower(.5);
+                idle();
+            }
+            else if( !gamepad1.dpad_up && !gamepad1.dpad_down){
+                init.LeftSlideMotor.setPower(.0);
+                init.RightSlideMotor.setPower(.0);
+                idle();
+            }
+/*
             if(gamepad.b(gamepad2.b)){
                 init.IntakeMotor.setPower(.5);
                 idle();
@@ -75,7 +91,7 @@ public class Official2018TeleOp extends LinearOpMode{
             else if(!gamepad.a(gamepad2.a)){
                 init.IntakeMotor.setPower(0);
                 idle();
-            }
+            }*/
 
             //Check to see if you can run the statements below as threads
           /*  while (gamepad1.dpad_up == true && gamepad1.dpad_down == false){

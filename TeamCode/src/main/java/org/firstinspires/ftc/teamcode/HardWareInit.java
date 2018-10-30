@@ -20,11 +20,14 @@ public class HardWareInit{
         leftMotor = op.hardwareMap.dcMotor.get("leftMotor");
         rightMotor = op.hardwareMap.dcMotor.get("rightMotor");
         strafeMotor = op.hardwareMap.dcMotor.get("strafeMotor");
-        IntakeMotor = op.hardwareMap.dcMotor.get("IntakeMotor");
-        rightMotor.setDirection(DcMotorSimple.Direction.REVERSE);
         LeftSlideMotor = op.hardwareMap.dcMotor.get("LeftSlideMotor");
         RightSlideMotor = op.hardwareMap.dcMotor.get("RightSlideMotor");
+        rightMotor.setDirection(DcMotorSimple.Direction.REVERSE);
         RightSlideMotor.setDirection(DcMotorSimple.Direction.REVERSE);
+      /*  IntakeMotor = op.hardwareMap.dcMotor.get("IntakeMotor");
+
+
+        */
         /*FlipMotor = op.hardwareMap.dcMotor.get("FlipMotor");
 
 
@@ -35,8 +38,9 @@ public class HardWareInit{
         DumpServo = op.hardwareMap.servo.get("DumpServo");*/
     }
     public void waitBlock(LinearOpMode op){
-        while (op.opModeIsActive() && this.leftMotor.isBusy() && this.rightMotor.isBusy()){
+        while (op.opModeIsActive() && this.leftMotor.isBusy()){
             op.telemetry.addData("leftMotor", leftMotor.getCurrentPosition());
+            op.telemetry.addData("rightMotor", rightMotor.getCurrentPosition());
             op.telemetry.update();
             op.idle();
         }
@@ -57,6 +61,13 @@ public class HardWareInit{
     }
 
     public void GoStraight(int encoderCnts, double MotorSpd){
+        this.leftMotor.setTargetPosition(encoderCnts);
+        this.rightMotor.setTargetPosition(encoderCnts);
+
+        this.leftMotor.setPower(MotorSpd);
+        this.rightMotor.setPower(MotorSpd);
+    }
+    public void Turn(int encoderCnts, double MotorSpd){
         this.leftMotor.setTargetPosition(encoderCnts);
         this.rightMotor.setTargetPosition(encoderCnts);
 
