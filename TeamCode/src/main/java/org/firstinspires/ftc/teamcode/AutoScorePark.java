@@ -1,22 +1,18 @@
 package org.firstinspires.ftc.teamcode;
 
-import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
+import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.hardware.DcMotor;
 
-
-@Autonomous(name = "CraterPark", group = "Exercises")
-
 /**
- * Created by singh on 10/17/2018.
+ * Created by singh on 10/31/2018.
  */
-
-public class Auto2018 extends LinearOpMode{
-
+@Autonomous(name= "ScorePark", group="Exercises")
+public class AutoScorePark extends LinearOpMode {
     HardWareInit hardware = new HardWareInit();
 
     @Override
-    public void runOpMode(){
+    public void runOpMode() {
         hardware.initHardware(this);
 
         hardware.leftMotor.setMode(DcMotor.RunMode.RUN_TO_POSITION);
@@ -55,38 +51,10 @@ public class Auto2018 extends LinearOpMode{
         hardware.RightSlideMotor.setPower(0);
 
 
-
-        hardware.GoStraight(3000, 1.0);
+        hardware.GoStraight(5000, 1.0);
         hardware.waitBlock(this);
         hardware.MotorStop(this);
         hardware.EncooderReseeter(this);
-
-        //Deploy the color servo. Below is the following mock code required for it to work.
-        /*
-        * while(ColorSensor1 = silver && ColorSensor2 = silver){
-        *   robot should raise one arm and turn so that the middle is knocked off
-        *   idle();
-        *}
-        *while(ColorSensor1 = Gold){
-        * robot should turn in that direction to knock it off, opposite if other colorsensor reads gold
-        *}
-        * */
-
-       /* hardware.Turn(400, .5);
-        hardware.waitBlock(this);
-        hardware.MotorStop(this);
-        hardware.EncooderReseeter(this);
-
-
-        hardware.GoStraight(1000, 1.0);
-        hardware.waitBlock(this);
-        hardware.MotorStop(this);
-        hardware.EncooderReseeter(this);*/
-
-
-
-
-
+    }
 
     }
-}
