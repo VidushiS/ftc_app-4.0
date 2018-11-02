@@ -27,12 +27,12 @@ public class AutoScorePark extends LinearOpMode {
 
         //lift goes down
         hardware.LeftSlideMotor.setPower(.5);
-        hardware.RightSlideMotor.setPower(.5);
+       // hardware.RightSlideMotor.setPower(.5);
 
         sleep(3000);
 
         hardware.LeftSlideMotor.setPower(0);
-        hardware.RightSlideMotor.setPower(0);
+      //  hardware.RightSlideMotor.setPower(0);
 
         //robot strafes to get hook off
         sleep(500);
@@ -43,18 +43,26 @@ public class AutoScorePark extends LinearOpMode {
 
         //the lift goes back to its original position
         hardware.LeftSlideMotor.setPower(-.5);
-        hardware.RightSlideMotor.setPower(-.5);
+       // hardware.RightSlideMotor.setPower(-.5);
 
         sleep(3000);
 
         hardware.LeftSlideMotor.setPower(0);
-        hardware.RightSlideMotor.setPower(0);
+       // hardware.RightSlideMotor.setPower(0);
 
 
         hardware.GoStraight(5000, 1.0);
         hardware.waitBlock(this);
         hardware.MotorStop(this);
         hardware.EncooderReseeter(this);
+
+        hardware.IDCServo.setPosition(1);
+        telemetry.addData("Servo Position", hardware.IDCServo.getPosition());
+        telemetry.update();
+        sleep(1000);
+        hardware.IDCServo.setPosition(-1);
+        telemetry.addData("Servo Position", hardware.IDCServo.getPosition());
+        telemetry.update();
     }
 
     }

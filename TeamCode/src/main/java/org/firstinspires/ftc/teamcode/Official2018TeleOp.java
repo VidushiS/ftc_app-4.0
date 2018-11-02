@@ -62,17 +62,22 @@ public class Official2018TeleOp extends LinearOpMode{
 
             if(gamepad1.dpad_down){
                 init.LeftSlideMotor.setPower(-.5);
-                init.RightSlideMotor.setPower(-.5);
+                telemetry.addData("Motor speed", init.LeftSlideMotor.getPower());
+                telemetry.update();
                 idle();
             }
             else if(gamepad1.dpad_up){
                 init.LeftSlideMotor.setPower(.5);
-                init.RightSlideMotor.setPower(.5);
+
+                telemetry.addData("Motor speed", init.LeftSlideMotor.getPower());
+                telemetry.update();
                 idle();
             }
             else if( !gamepad1.dpad_up && !gamepad1.dpad_down){
                 init.LeftSlideMotor.setPower(.0);
-                init.RightSlideMotor.setPower(.0);
+
+                telemetry.addData("Motor speed", init.LeftSlideMotor.getPower());
+                telemetry.update();
                 idle();
             }
 /*

@@ -31,12 +31,12 @@ public class Auto2018 extends LinearOpMode{
 
         //lift goes down
         hardware.LeftSlideMotor.setPower(.5);
-        hardware.RightSlideMotor.setPower(.5);
+
 
         sleep(3000);
 
         hardware.LeftSlideMotor.setPower(0);
-        hardware.RightSlideMotor.setPower(0);
+
 
         //robot strafes to get hook off
         sleep(500);
@@ -47,12 +47,12 @@ public class Auto2018 extends LinearOpMode{
 
         //the lift goes back to its original position
         hardware.LeftSlideMotor.setPower(-.5);
-        hardware.RightSlideMotor.setPower(-.5);
+
 
         sleep(3000);
 
         hardware.LeftSlideMotor.setPower(0);
-        hardware.RightSlideMotor.setPower(0);
+
 
 
 
