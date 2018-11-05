@@ -1,6 +1,7 @@
 package org.firstinspires.ftc.teamcode;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
+import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.util.Range;
 
 /**
@@ -16,6 +17,8 @@ public class Official2018TeleOp extends LinearOpMode{
     @Override
     public void runOpMode(){
         init.initHardware(this);
+        init.leftMotor.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
+        init.rightMotor.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
 
         telemetry.addData("Mode", "Waiting");
         telemetry.update();

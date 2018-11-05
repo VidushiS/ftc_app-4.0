@@ -15,18 +15,18 @@ public class AutoScorePark extends LinearOpMode {
     public void runOpMode() {
         hardware.initHardware(this);
 
-        hardware.leftMotor.setMode(DcMotor.RunMode.RUN_TO_POSITION);
-        hardware.rightMotor.setMode(DcMotor.RunMode.RUN_TO_POSITION);
+   //    hardware.leftMotor.setMode(DcMotor.RunMode.RUN_TO_POSITION);
+     //  hardware.rightMotor.setMode(DcMotor.RunMode.RUN_TO_POSITION);
 
         telemetry.addData("Mode", "waiting");
         telemetry.update();
 
         waitForStart();
 
-        hardware.EncooderReseeter(this);
+        //hardware.EncooderReseeter(this);
 
         //lift goes down
-        hardware.LeftSlideMotor.setPower(.5);
+      /*  hardware.LeftSlideMotor.setPower(.5);
        // hardware.RightSlideMotor.setPower(.5);
 
         sleep(3000);
@@ -48,10 +48,10 @@ public class AutoScorePark extends LinearOpMode {
         sleep(3000);
 
         hardware.LeftSlideMotor.setPower(0);
-       // hardware.RightSlideMotor.setPower(0);
+       // hardware.RightSlideMotor.setPower(0);*/
 
 
-        hardware.GoStraight(5000, 1.0);
+     /*   hardware.GoStraight(5000, 1.0);
         hardware.waitBlock(this);
         hardware.MotorStop(this);
         hardware.EncooderReseeter(this);
@@ -62,7 +62,28 @@ public class AutoScorePark extends LinearOpMode {
         sleep(1000);
         hardware.IDCServo.setPosition(-1);
         telemetry.addData("Servo Position", hardware.IDCServo.getPosition());
-        telemetry.update();
+        telemetry.update();*/
+
+        hardware.strafeMotor.setPower(-1.0);
+        sleep(3000);
+        hardware.strafeMotor.setPower(0);
+        sleep(50);
+
+        hardware.IDCServo.setPosition(0.05);
+
+        sleep(3000);
+        hardware.IDCServo.setPosition(0.5);
+
+
+        sleep(50);
+
+        hardware.leftMotor.setPower(-1.0);
+        hardware.rightMotor.setPower(-1.0);
+
+        sleep(3000);
+        hardware.leftMotor.setPower(0);
+        hardware.rightMotor.setPower(0);
+
     }
 
     }

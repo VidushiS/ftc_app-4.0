@@ -1,5 +1,6 @@
 package org.firstinspires.ftc.teamcode;
 
+import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 import com.qualcomm.robotcore.hardware.DcMotor;
@@ -19,7 +20,7 @@ public class Auto2018 extends LinearOpMode{
     public void runOpMode(){
         hardware.initHardware(this);
 
-        hardware.leftMotor.setMode(DcMotor.RunMode.RUN_TO_POSITION);
+    hardware.leftMotor.setMode(DcMotor.RunMode.RUN_TO_POSITION);
         hardware.rightMotor.setMode(DcMotor.RunMode.RUN_TO_POSITION);
 
         telemetry.addData("Mode", "waiting");
@@ -30,13 +31,13 @@ public class Auto2018 extends LinearOpMode{
         hardware.EncooderReseeter(this);
 
         //lift goes down
-        hardware.LeftSlideMotor.setPower(.5);
+        /*hardware.LeftSlideMotor.setPower(.5);
 
 
         sleep(3000);
 
         hardware.LeftSlideMotor.setPower(0);
-
+1
 
         //robot strafes to get hook off
         sleep(500);
@@ -82,6 +83,19 @@ public class Auto2018 extends LinearOpMode{
         hardware.waitBlock(this);
         hardware.MotorStop(this);
         hardware.EncooderReseeter(this);*/
+
+     /*   hardware.strafeMotor.setPower(-1.0);
+        sleep(4500);
+        hardware.strafeMotor.setPower(0);
+        sleep(50);*/
+
+
+        hardware.GoStraight(5000, 1.0);
+        hardware.waitBlock(this);
+        hardware.MotorStop(this);
+        hardware.EncooderReseeter(this);
+
+
 
 
 
