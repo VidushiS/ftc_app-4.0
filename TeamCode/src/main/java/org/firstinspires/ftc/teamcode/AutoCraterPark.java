@@ -1,6 +1,6 @@
 package org.firstinspires.ftc.teamcode;
 
-import com.qualcomm.robotcore.eventloop.opmode.Disabled;
+//import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 import com.qualcomm.robotcore.hardware.DcMotor;
@@ -12,7 +12,7 @@ import com.qualcomm.robotcore.hardware.DcMotor;
  * Created by singh on 10/17/2018.
  */
 
-public class Auto2018 extends LinearOpMode{
+public class AutoCraterPark extends LinearOpMode{
 
     HardWareInit hardware = new HardWareInit();
 
@@ -90,11 +90,24 @@ public class Auto2018 extends LinearOpMode{
         sleep(50);*/
 
 
-        hardware.GoStraight(5000, 1.0);
+/*        hardware.GoStraight(5000, 1.0);
+        hardware.waitBlock(this);
+        hardware.MotorStop(this);
+        hardware.EncooderReseeter(this);*/
+        hardware.strafeMotor.setPower(-1.0);
+        sleep(1000);
+        hardware.strafeMotor.setPower(0);
+        sleep(50);
+
+        hardware.EncooderReseeter(this);
+        hardware.Turn(300, 0.5);
+        hardware.waitBlock(this);
+        hardware.MotorStop(this);
+
+        hardware.GoStraight(-3000, -1.0);
         hardware.waitBlock(this);
         hardware.MotorStop(this);
         hardware.EncooderReseeter(this);
-
 
 
 

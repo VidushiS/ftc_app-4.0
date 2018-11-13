@@ -63,7 +63,7 @@ public class Official2018TeleOp extends LinearOpMode{
                 idle();
             }*/
 
-            if(gamepad1.dpad_down){
+        /*    if(gamepad1.dpad_down){
                 init.LeftSlideMotor.setPower(-.5);
                 telemetry.addData("Motor speed", init.LeftSlideMotor.getPower());
                 telemetry.update();
